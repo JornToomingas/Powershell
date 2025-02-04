@@ -1,0 +1,22 @@
+abaudassi0@feedburner.com,drogers1@wisc.edu,hocalleran2@scientificamerican.com,mdavidzon3@pinterest.com,csmithson4@businessinsider.com,cgiannotti5@123-reg.co.uk,ljeremaes6@wired.com,glambdean7@wikispaces.com,cbonwell8@un.org,yjovicic9@virginia.edu,aranglea@go.com,lpattemoreb@360.cn,drojasc@xinhuanet.com,bfrered@tripod.com,clavendere@taobao.com,cblumiref@nhs.uk,lgarthshoreg@squidoo.com,winnmanh@dailymotion.com,ggilhooliei@timesonline.co.uk,rmordiej@berkeley.edu,xerbaink@livejournal.com,giglesial@cocolog-nifty.com,jfazziolim@reuters.com,gtwycrossn@scientificamerican.com,hdallano@timesonline.co.uk,cjansiep@springer.com,lgelderq@boston.com,bglendzar@tmall.com,bbrettoners@mozilla.org,clegallot@miitbeian.gov.cn
+
+#Määra skripti asukoht ja loe emailid failist
+$SkriptiAsukoht = $MyInvocation.MyCommand.Path
+$dir = Split-Path $SkriptiAsukoht
+$emailid = Get-Content -Path "$dir\emailid.txt"
+
+#Tükelda emailid massiivi
+$emailid_massiiv = $emailid -split ","
+
+#Oma loodud massiiv
+$emailid_massiiv += $emailid
+
+#Mitu emaili on massiivis
+$emailide_arv = $emailid.massiiv.Count
+Write-Output "Massiivis on $emailide_arv emaili"
+
+#Väljasta korraga esimene ja viimane osa massiivist
+$esimene_email = $emailid_massiiv[0]
+$viimane_email = $emailid_massiiv[-1]
+Write-Output "Esimene email massiivis: $esimene_email"
+Write-Output "Viimane email massivivs: $viimane_email"
