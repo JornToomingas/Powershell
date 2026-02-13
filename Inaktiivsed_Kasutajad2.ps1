@@ -32,10 +32,10 @@ foreach ($user in $users) {
                 -Identity $user.DistinguishedName `
                 -TargetPath $disabledOU
 
-            Write-Host "→ Keelatud ja liigutatud DISABLED OU-sse"
+            Write-Host "Keelatud ja liigutatud DISABLED OU-sse"
         }
         else {
-            Write-Host "→ DRY RUN: muudatusi ei tehtud"
+            Write-Host "DRY RUN: muudatusi ei tehtud"
         }
     }
 }
